@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weird News TV | Games</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0711;
+            color: #f1ecf7;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        header {
+            background: #130d1e;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            color: #a09bb0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link.active, .nav-link:hover {
+            color: #ff0055;
+        }
+
+        .subscribe-btn {
+            background: #ff0055;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .arcade-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .arcade-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .arcade-title h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            border-left: 4px solid #ff0055;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* Fullscreen Button Styles */
+        .fullscreen-btn {
+            background: #1d1430;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .fullscreen-btn:hover {
+            background: #ff0055;
+            border-color: #ff0055;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+        }
+
+        .game-frame-container {
+            width: 100%;
+            height: 750px;
+            background: #130d1e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-frame-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #07040b;
+            color: #5d586e;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="WeirdNewsTVWebsite.html" class="logo">WEIRD NEWS TV</a>
+        <div class="nav-container">
+            <a href="games.html" class="nav-link active">Games</a>
+            <a href="https://youtube.com/@WeirdNewsTVOfficial" target="_blank" class="subscribe-btn">Subscribe</a>
+        </div>
+    </header>
+
+    <main class="arcade-container">
+        <div class="arcade-header">
+            <div class="arcade-title">
+                <h1>🎮 Weird News TV Games</h1>
+                <p style="color: #a09bb0;">Play games created by Weird News TV.</p>
+            </div>
+            <button class="fullscreen-btn" onclick="openFullscreen()">
+                📺 Go Fullscreen
+            </button>
+        </div>
+        
+        <div class="game-frame-container">
+            <iframe id="arcade-game" src="https://weirdnewstv-h.github.io/YouTuber-Clicker/" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Weird News TV</p>
+    </footer>
+
+    <script>
+        function openFullscreen() {
+            var gameElem = document.getElementById("arcade-game");
+            
+            if (gameElem.requestFullscreen) {
+                gameElem.requestFullscreen();
+            } else if (gameElem.webkitRequestFullscreen) { /* Safari support */
+                gameElem.webkitRequestFullscreen();
+            } else if (gameElem.msRequestFullscreen) { /* IE11 support */
+                gameElem.msRequestFullscreen();
+            }
+        }
+    </script>
+
+</body>
+</html>
